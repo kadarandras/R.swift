@@ -32,14 +32,18 @@ struct Let: UsedTypesProvider, SwiftCodeConverible {
   let name: SwiftIdentifier
   let typeDefinition: TypeDefinition
   let value: String
+  let isMutable: Bool
+  let isLazy: Bool
 
-  init(comments: [String], accessModifier: AccessLevel, isStatic: Bool, name: SwiftIdentifier, typeDefinition: TypeDefinition, value: String) {
+  init(comments: [String], accessModifier: AccessLevel, isStatic: Bool, name: SwiftIdentifier, typeDefinition: TypeDefinition, isMutable: Bool = false, isLazy: Bool = false, value: String) {
     self.comments = comments
     self.accessModifier = accessModifier
     self.isStatic = isStatic
     self.name = name
     self.typeDefinition = typeDefinition
     self.value = value
+    self.isMutable = isMutable
+    self.isLazy = isLazy
   }
 
   var usedTypes: [UsedType] {
@@ -57,6 +61,15 @@ struct Let: UsedTypesProvider, SwiftCodeConverible {
     case .inferred: typeString = ""
     }
 
-    return "\(commentsString)\(accessModifierString)\(staticString)let \(name)\(typeString) = \(value)"
+    let variableTypeString: String
+    if isMutable {
+      // Static variables are already lazy
+      variableTypeString = isLazy && !isStatic ? "lazy var" : "var"
+    } else {
+      assert(!isLazy, "An immutable property can not be lazy")
+      variableTypeString = "let"
+    }
+
+    return "\(commentsString)\(accessModifierString)\(staticString)\(variableTypeString) \(name)\(typeString) = \(value)"
   }
 }
