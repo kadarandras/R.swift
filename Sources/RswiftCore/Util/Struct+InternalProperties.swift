@@ -20,15 +20,6 @@ extension Struct {
         typeDefinition: .inferred(Type._Bundle),
         value: "Bundle(identifier: \"\(bundleIdentifier)\")!"),
       Let(
-        comments: ["The bundle to access the localized resources. It defaults to the hosting bundle."],
-        accessModifier: .filePrivate,
-        isStatic: true,
-        name: "localizationBundle",
-        typeDefinition: .inferred(Type._Bundle),
-        isMutable: true,
-        isLazy: true,
-        value: "{ return hostingBundle }()"),
-      Let(
         comments: [],
         accessModifier: .filePrivate,
         isStatic: true,
