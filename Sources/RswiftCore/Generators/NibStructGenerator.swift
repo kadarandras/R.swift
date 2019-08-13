@@ -111,7 +111,7 @@ struct NibStructGenerator: StructGenerator {
 
     let externalStruct = Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(nibProperties.count) nibs."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to nibs."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

@@ -58,7 +58,7 @@ struct StoryboardStructGenerator: StructGenerator {
 
     let externalStruct = Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(storyboardTypes.count) storyboards."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to storyboards."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

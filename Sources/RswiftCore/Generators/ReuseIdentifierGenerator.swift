@@ -33,7 +33,7 @@ struct ReuseIdentifierStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(reuseIdentifierProperties.count) reuse identifiers."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to reuse identifiers."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

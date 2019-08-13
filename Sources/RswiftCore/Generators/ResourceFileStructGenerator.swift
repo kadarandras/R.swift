@@ -29,7 +29,7 @@ struct ResourceFileStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(firstLocales.count) files."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to files."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

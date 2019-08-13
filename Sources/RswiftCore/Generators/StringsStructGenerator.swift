@@ -41,7 +41,7 @@ struct StringsStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(groupedLocalized.uniques.count) localization tables."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to localization tables."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],
@@ -63,7 +63,7 @@ struct StringsStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(params.count) localization keys."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to localization keys."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

@@ -51,7 +51,7 @@ struct ColorStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(colorLets.count) colors."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to colors."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],
@@ -127,7 +127,7 @@ private extension NamespacedAssetSubfolder {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(colorLets.count) colors."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to colors."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

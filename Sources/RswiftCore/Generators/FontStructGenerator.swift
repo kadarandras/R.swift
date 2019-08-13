@@ -80,7 +80,7 @@ struct FontStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `R.font` struct is generated, and contains static references to \(fonts.count) fonts."],
+      comments: ["This `R.font` struct is generated, and contains static references to fonts."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: implements,

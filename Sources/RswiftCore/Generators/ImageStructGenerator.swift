@@ -60,7 +60,7 @@ struct ImageStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(imageLets.count) images."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to images."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],
@@ -136,7 +136,7 @@ private extension NamespacedAssetSubfolder {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(imageLets.count) images."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to images."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],

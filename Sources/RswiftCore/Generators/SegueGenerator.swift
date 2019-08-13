@@ -72,7 +72,7 @@ struct SegueStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to \(structs.count) view controllers."],
+      comments: ["This `\(qualifiedName)` struct is generated, and contains static references to view controllers."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: structName),
       implements: [],
@@ -158,7 +158,7 @@ struct SegueStructGenerator: ExternalOnlyStructGenerator {
 
     return Struct(
       availables: [],
-      comments: ["This struct is generated for `\(sourceType.name)`, and contains static references to \(properties.count) segues."],
+      comments: ["This struct is generated for `\(sourceType.name)`, and contains static references to segues."],
       accessModifier: externalAccessLevel,
       type: Type(module: .host, name: typeName),
       implements: [],
